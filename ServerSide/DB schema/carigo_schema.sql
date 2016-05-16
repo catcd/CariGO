@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: May 17, 2016 at 12:26 AM
+-- Generation Time: May 17, 2016 at 04:39 AM
 -- Server version: 5.5.49-0ubuntu0.14.04.1
 -- PHP Version: 5.5.9-1ubuntu4.16
 
@@ -34,8 +34,18 @@ CREATE TABLE IF NOT EXISTS `account` (
   `username` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
   `password` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`id`),
-  UNIQUE KEY `username` (`username`)
+  UNIQUE KEY `username` (`username`),
+  UNIQUE KEY `id` (`id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=4 ;
+
+--
+-- Dumping data for table `account`
+--
+
+INSERT INTO `account` (`id`, `username`, `password`) VALUES
+(1, 'cancat95', '12345678'),
+(2, 'pagenguyen', '12345678'),
+(3, 'dungngo', '12345678');
 
 -- --------------------------------------------------------
 
@@ -47,11 +57,13 @@ DROP TABLE IF EXISTS `customer`;
 CREATE TABLE IF NOT EXISTS `customer` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `account_id` int(11) NOT NULL,
+  `name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `email` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
   `gender` int(11) DEFAULT NULL,
   `dob` date DEFAULT NULL,
   PRIMARY KEY (`id`),
-  UNIQUE KEY `email` (`email`)
+  UNIQUE KEY `email` (`email`),
+  UNIQUE KEY `account_id` (`account_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
@@ -64,12 +76,14 @@ DROP TABLE IF EXISTS `delivery_man`;
 CREATE TABLE IF NOT EXISTS `delivery_man` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `account_id` int(11) NOT NULL DEFAULT '0',
+  `name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `email` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
   `gender` int(11) DEFAULT NULL,
   `dob` date DEFAULT NULL,
   `vehicles` varchar(50) COLLATE utf8_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`),
-  UNIQUE KEY `email` (`email`)
+  UNIQUE KEY `email` (`email`),
+  UNIQUE KEY `account_id` (`account_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
@@ -94,18 +108,30 @@ CREATE TABLE IF NOT EXISTS `request` (
   PRIMARY KEY (`id`),
   KEY `FK1_idx` (`customer_id`),
   KEY `FK2_idx` (`delivery_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=2 ;
 
 --
 -- Constraints for dumped tables
 --
 
 --
+-- Constraints for table `customer`
+--
+ALTER TABLE `customer`
+  ADD CONSTRAINT `customer_ibfk_1` FOREIGN KEY (`account_id`) REFERENCES `account` (`id`) ON UPDATE CASCADE;
+
+--
+-- Constraints for table `delivery_man`
+--
+ALTER TABLE `delivery_man`
+  ADD CONSTRAINT `delivery_man_ibfk_1` FOREIGN KEY (`account_id`) REFERENCES `account` (`id`) ON UPDATE CASCADE;
+
+--
 -- Constraints for table `request`
 --
 ALTER TABLE `request`
-  ADD CONSTRAINT `FK1` FOREIGN KEY (`customer_id`) REFERENCES `customer` (`id`) ON UPDATE CASCADE,
-  ADD CONSTRAINT `FK2` FOREIGN KEY (`delivery_id`) REFERENCES `delivery_man` (`id`) ON UPDATE CASCADE;
+  ADD CONSTRAINT `FK1` FOREIGN KEY (`customer_id`) REFERENCES `customer` (`account_id`) ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK2` FOREIGN KEY (`delivery_id`) REFERENCES `delivery_man` (`account_id`) ON UPDATE CASCADE;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
