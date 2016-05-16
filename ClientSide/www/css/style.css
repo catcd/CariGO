@@ -41,19 +41,19 @@ MENU BAR
 /****
 SEARCH-BOX
 ****/
-.search-box {
+/*.search-box {
 	position: fixed;
 	z-index: 1;
 	top: 44px;
 }
 
-.app-content-searchbox { margin-top: 33px; }
+.app-content-searchbox { margin-top: 33px; }*/
 
 
 /*************
 NAME: CariGO
 *************/
-*, *:before, *:after {
+/**, *:before, *:after {
 	-moz-box-sizing: border-box;
 	-webkit-box-sizing: border-box;
 	box-sizing: border-box;
@@ -168,3 +168,4 @@ label.light {
 	text-shadow: 0 1px 0 rgba(255,255,255,0.2);
 	border-radius: 100%;
 }
+*/
