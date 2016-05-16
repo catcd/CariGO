@@ -3,48 +3,36 @@
    last update: 18-Sep-2015
    type: state template -->
 
-<ion-view title="Học sinh lớp {{eSchool.getClass(classID).code}}">
-  <ion-nav-buttons side="left">
-    <button class="button button-icon button-clear ion-android-arrow-back app-button" data-ng-click="goBack()"></button>
-  </ion-nav-buttons>
+<ion-view title="Request Details">
+	<ion-nav-buttons side="left">
+		<button class="button button-icon button-clear ion-android-arrow-back app-button" data-ng-click="goBack()"></button>
+	</ion-nav-buttons>
 
-  <ion-content padding="true">
-    <div class="app-name-intro">
-      <h2><span>Trường</span><span>Nhà</span></h2>
-      <p class="text-center">Giải pháp Công nghệ Quản lý Giáo dục</p>
-    </div>
-
-    <div id="intro" >
-      <p class="text-justify">
-        <strong>Giới thiệu:</strong>
-        Đây là phiên bản rút gọn của Dịch vụ phần mềm quản lý trường học Trường Nhà được cung cấp tại <a href="{{website}}">{{website}}</a>. Phiên bản rút gọn này chỉ có các chức năng thường dùng cho giáo viên và phụ huynh. 
-      </p>
-
-      <p>
-        <strong>Tài khoản:</strong>
-        Tài khoản đăng nhập chính là tài khoản sử dụng để đăng nhập <a href="{{website}}">{{website}}</a>.
-      </p>
-
-      <p>
-        <strong>Phiên bản: </strong>{{version}} 
-      </p>
-      
-      <p>
-        <strong>Hỗ trợ:</strong>
-        Nếu bạn là giáo viên hoặc phụ huynh hoặc người bảo trợ, xin vui lòng liên hệ với nhà trường để được hỗ trợ nhanh nhất. Nếu vẫn còn khó khăn, bạn có thể liên hệ với chúng tôi qua các kênh sau.
-      </p>
-        
-      <div class="contact">
-        <p>
-  				<i class="icon ion-ios-email-outline"></i>
-  				<a href="mailto:{{email}}?Subject='Hỗ trợ từ ứng dụng'">{{email}}</a>
-  			</p>
-
-  			<p>
-  				<i class="icon ion-ios-telephone-outline"></i>
-  				<a href="tel:+84{{tel}}">0{{tel}}</a>
-  			</p>
-      </div>
-    </div>
-  </ion-content>
+	<ion-content padding="true">
+		<div id="request-detail-main">
+			<form action="#" method="POST">
+			<h1>Request Details</h1>
+			<fieldset>
+				<label for="cargo_type">Type Of Cargo:</label>
+				<select id="cargo_type" name="cargo_type" ng-model="">
+					<option value="food">Food</option>
+					<option value="furniture">Furniture</option>
+					<option value="equipment">Equipment</option>
+					<option value="other">Other</option>
+				</select>
+				<label for="from_loc">From Location:</label>
+				<input type="text" id="from_loc" name="from_loc" ng-model="" required></input>
+				<label for="to_loc">To Location:</label>
+				<input type="text" id="to_loc" name="to_loc" ng-model="" required></input>
+				<label for="date">Delivery Time:</label>
+				<input type="date" id="date" name="date" ng-model="" required></input>
+				<input type="time" id="time" name="time" ng-model="" required></input>
+				</select>
+				<label for="special">Special Requirements:</label>
+				<textarea id="special" name="special" ng-model=""></textarea>
+			</fieldset>
+			<button ng-click="">Delete</button>
+			<button type="submit" ng-click="">Save</button>
+		</div>
+	</ion-content>
 </ion-view>

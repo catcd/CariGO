@@ -50,28 +50,121 @@ SEARCH-BOX
 .app-content-searchbox { margin-top: 33px; }
 
 
-/****
-NAME: TruongNha
-****/
-
-.app-name, .app-name-intro {
-	margin-top: 30px;
-	margin-bottom: 30px;
-}
-.app-name, .app-name-intro {
-	margin-top: 0px;
+/*************
+NAME: CariGO
+*************/
+*, *:before, *:after {
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
 }
 
-.app-name h2, .app-name-intro h2 {
+body {
+	font-family: 'Nunito', sans-serif;
+	color: #384047;
+}
+
+ion-content {
+	background: #f4f7f8;
+}
+
+form,
+#request-list,
+#request-detail-main {
+	width: inherit;
+	margin: 0 auto;
+	background: #f4f7f8;
+}
+
+h1 {
+	margin: 0 0 30px 0;
 	text-align: center;
-	font-size: 35px;
 }
 
-.app-name h2 span:nth-child(1), .app-name-intro h2 span:nth-child(1) {
-	color: royalblue;
+input[type="text"],
+input[type="date"],
+input[type="number"],
+input[type="tel"],
+input[type="time"],
+textarea,
+select {
+	background: rgba(255,255,255,0.1);
+	border: none;
+	font-size: 16px;
+	height: auto;
+	margin: 0;
+	outline: 0;
+	padding: 15px;
+	width: 100%;
+	background-color: #e8eeef;
+	color: #5c6770;
+	box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
+	margin-bottom: 20px;
 }
 
-.app-name h2 span:nth-child(2), .app-name-intro h2 span:nth-child(2) {
-	color: orangered;
+input[type="date"] {
+	width: 60%;
+	display: inline-block;
+}
+input[type="time"] {
+	width: 38%;
+	display: inline-block;
 }
 
+select {
+	padding: 6px;
+	height: 40px;
+	border-radius: 2px;
+}
+
+button {
+	padding: 19px 0 19px 0;
+	color: #FFF;
+	background-color: #ff6600;
+	font-size: 26px;
+	text-align: center;
+	font-style: normal;
+	border-radius: 5px;
+	width: 100%;
+	border: 0;
+	margin-bottom: 20px;
+}
+
+button[type="submit"] {
+	background-color: #3366cc;
+}
+
+fieldset {
+	margin-bottom: 10px;
+	border: none;
+}
+
+legend {
+	font-size: 1.4em;
+	margin-bottom: 10px;
+	border: 0;
+}
+
+label {
+	display: block;
+	margin-bottom: 8px;
+}
+
+label.light {
+	font-weight: 300;
+	display: inline;
+}
+
+.number {
+	background-color: #3366cc;
+	color: #fff;
+	height: 30px;
+	width: 30px;
+	display: inline-block;
+	font-size: 0.8em;
+	margin-right: 20px;
+	line-height: 30px;
+	text-align: center;
+	text-shadow: 0 1px 0 rgba(255,255,255,0.2);
+	border-radius: 100%;
+}

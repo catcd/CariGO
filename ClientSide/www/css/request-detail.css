@@ -2,3 +2,8 @@
    owner: Nguyen Minh Trang
    last update: 16/05/2016
    type: state template */
+
+#request-detail-main button {
+	width: 49%;
+	display: inline-block;
+}

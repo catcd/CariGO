@@ -3,23 +3,29 @@
    last update: 11-Sep-2015
    type: state template -->
 
-<ion-view title="Đội ngũ cán bộ">
-  <ion-nav-buttons side="left">
-    <button class="button button-icon button-clear ion-android-menu style-button app-button" ng-click="toggleLeft()"></button>
-  </ion-nav-buttons>
-
-  <div id="teacher">
-	<div class="bar bar-header item-input-inset search-box">
-	  <ion-search placeholder="Tìm kiếm" filter="search"></ion-search>
-	</div>
+<ion-view title="Track the Requests">
+	<ion-nav-buttons side="left">
+		<button class="button button-icon button-clear ion-android-menu style-button app-button" ng-click="toggleLeft()"></button>
+	</ion-nav-buttons>
 	
 	<ion-content padding="true" class="app-content-searchbox">
-	  <ion-list id="teacher-list">
-		<ion-item data-ng-repeat="teacher in eSchool.teachers | orderBy:'name' | filter:search.value">
-		  <h2>{{teacher.name}}</h2>
-		  <p>{{teacher.position}}</p>
-		</ion-item>
-	  </ion-list>
+		<div id="request-list" data-ng-repeat="request in requestList">
+			<div class="{{request.dStatus == 'unserved' ? 'item':'item served'}}" ng-click="viewRequestDetails(request.dRequestID)">
+				<div class="item-info">
+					<h3>{{request.dTypeOfCargo}}</h3>
+					<h6>From: {{request.dFromLocation}}</h6>
+					<h6>To: {{request.dToLocation}}</h6>
+				</div>
+				<div class="delivery-info">
+					<div class="delivery-man-number">
+						<img src="../img/delivery-man.png" alt="delivery-man" />
+						<label>{{request.dDeliveryManNum}}</label>
+					</div>
+					<div class="min-money">
+						<label>MIN: {{request.dMinMoney}}</label>
+					</div>
+				</div>
+			</div>
+		</div>
 	</ion-content>
-  </div>
 </ion-view>
