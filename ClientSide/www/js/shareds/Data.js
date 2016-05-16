@@ -10,12 +10,10 @@ var data = angular.module('shareds.data', []);
 // User information
 data.factory('eUser', function(){
 	return {
-		id: '',				// A-Z, a-z, 0-9, _
 		username: '',		// A-Z, a-z, 0-9, _
 		password: '',		// printable char in ASCII
 
 		resetData: function(){
-			this.id = '';
 			this.username = '';
 			this.password = '';
 		}

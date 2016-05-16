@@ -13,27 +13,35 @@
 
         public function proc()
         {
+            if ($this->check($this->username, $this->password)) {
+                echo "SUCCESS";
+            } else {
+                echo "FAILED";
+            }
+        }
+
+        public static function check($username, $password) {
             try {
                 $conn = new PDO("mysql:host=localhost;dbname=carigo", 'carigo', '12345678');
                 // set the PDO error mode to exception
                 $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
                 $stmt = $conn->prepare("SELECT id FROM account WHERE username = :username and password = :password");
-                $stmt->bindParam(':username', $this->username);
-                $stmt->bindParam(':password', $this->password);
+                $stmt->bindParam(':username', $username);
+                $stmt->bindParam(':password', $password);
                 $stmt->execute();
 
                 if ($row = $stmt->fetch()) {
-                    session_start();
-                    $_SESSION['carigoId'] = $row['id'];
-                    echo "SUCCESS";
+                    $conn = null;
+                    return $row['id'];
                 } else {
-                    echo "FAILED";
+                    $conn = null;
+                    return false;
                 }
             }
             catch(PDOException $e) {
-                echo "Connection failed: " . $e->getMessage();
+                $conn = null;
+                return false;
             }
-            $conn = null;
         }
     }
 ?>

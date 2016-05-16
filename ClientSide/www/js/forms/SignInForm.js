@@ -14,7 +14,7 @@ signIn.controller('SignInForm', function($scope, $rootScope, $http, $state, eToa
 		loading();
 		// connect throught http connection
 		$http({
-			url: 'http://localhost:80/signin',
+			url: 'http://localhost:80/signIn',
 			method: 'POST',
 			data: {
 				'username': $scope.user.username,
@@ -23,6 +23,8 @@ signIn.controller('SignInForm', function($scope, $rootScope, $http, $state, eToa
 		}).success(function(data, status, headers, config) {
 			if (data == 'SUCCESS') {
 				stopLoading();
+				eUser.username = $scope.user.username;
+				eUser.password = $scope.user.password;
 				eToast.toastInfo('Welcome to CariGO', 2000);
 				$state.go('bookDeliveryService');
 			} else {
