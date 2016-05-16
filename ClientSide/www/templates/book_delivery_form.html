@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Book Delivery Service</title>
+        <link rel="stylesheet" href="css/normalize.css">
+        <link href='http://fonts.googleapis.com/css?family=Nunito:400,300' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="css/main.css">
+      	<script src="js/book_delivery_form.js"></script>
+      	<script src="js/track_request_form.js"></script>
+      	<script src="js/delivery_service_form.js"></script>
+    </head>
+    <body>
+		<form action="#" method="POST">
+		<h1>Book Delivery Service</h1>
+		<fieldset>
+			<legend><span class="number">1</span>Contact Information</legend>
+			<label for="name">Name:</label>
+			<input type="text" id="name" name="user_name" ng-model="deliveryService.uName" required>
+			<label for="phone">Phone:</label>
+			<input type="tel" id="phone" name="phone" ng-model="deliveryService.uPhone" required>
+		</fieldset>
+		<fieldset>
+			<legend><span class="number">2</span>Delivery Details</legend>
+			<label for="from_loc">From Location:</label>
+			<input type="text" id="from_loc" name="from_loc" ng-model="deliveryService.dFromLocation" required></input>
+			<label for="to_loc">To Location:</label>
+			<input type="text" id="to_loc" name="to_loc" ng-model="deliveryService.dToLocation" required></input>
+			<label for="date">Delivery Time:</label>
+			<input type="date" id="date" name="date" ng-model="deliveryService.dDate" required></input>
+			<input type="time" id="time" name="time" ng-model="deliveryService.dTime" required></input>
+			<label for="cargo_type">Type Of Cargo:</label>
+			<select id="cargo_type" name="cargo_type" ng-model="deliveryService.dTypeOfCargo">
+				<option value="food">Food</option>
+				<option value="furniture">Furniture</option>
+				<option value="equipment">Equipment</option>
+				<option value="other">Other</option>
+			</select>
+			<label for="special">Special Requirements:</label>
+			<textarea id="special" name="special" ng-model="deliveryService.dSpecialRequirement"></textarea>
+		</fieldset>
+		<button type="submit" ng-click="bookDeliveryService()">Book</button>
+		</form>
+    </body>
+</html>

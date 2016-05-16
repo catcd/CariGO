@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Book Delivery Service</title>
+        <link rel="stylesheet" href="css/normalize.css">
+        <link href='http://fonts.googleapis.com/css?family=Nunito:400,300' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="css/main.css">
+    </head>
+    <body>
+		<div id="main">
+			<h1>Track the Requests</h1>
+			<div id="request-list" data-ng-repeat="request in requestList">
+				<div class="{{request.dStatus == 'unserved' ? 'item':'item served'}}" ng-click="viewRequestDetails(request.dRequestID)">
+					<div class="item-info">
+						<h3>{{request.dTypeOfCargo}}</h3>
+						<h6>From: {{request.dFromLocation}}</h6>
+						<h6>To: {{request.dToLocation}}</h6>
+					</div>
+					<div class="delivery-info">
+						<div class="delivery-man-number">
+							<img src="img/delivery-man.png" alt="delivery-man" />
+							<label>{{request.dDeliveryManNum}}</label>
+						</div>
+						<div class="min-money">
+							<label>MIN: {{request.dMinMoney}}</label>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+    </body>
+</html>
