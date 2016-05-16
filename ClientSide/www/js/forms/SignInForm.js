@@ -14,14 +14,14 @@ signIn.controller('SignInForm', function($scope, $rootScope, $http, $state, eToa
 		loading();
 		// connect throught http connection
 		$http({
-			url: 'localhost:80/login',
+			url: 'http://localhost:80/signin',
 			method: 'POST',
-			params: {
+			data: {
 				'username': $scope.user.username,
 				'password': $scope.user.password
-			}
+			},
 		}).success(function(data, status, headers, config) {
-			if (data.result == 'SUCCESS') {
+			if (data == 'SUCCESS') {
 				stopLoading();
 				eToast.toastInfo('Welcome to CariGO', 2000);
 				$state.go('bookDeliveryService');

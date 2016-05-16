@@ -1,44 +1,49 @@
 <!-- starter: Can Duy Cat
    owner: Can Duy Cat
-   last update: 18-Sep-2015
+   last update: 16/05/2016
    type: menu panel template -->
 
 <!-- HEADER -->
-<ion-header-bar class="bar-stable">
-  <h1 class="title">Chức năng</h1>
+<ion-header-bar class="bar-easi-blue">
+  <h1 class="title">Functions</h1>
 </ion-header-bar>
 
 <!-- ALL MENU ITEM -->
 <ion-content id="sm-content">
   <div class="list">
-    <a class="item item-icon-left" data-ng-click="eDatabase.refresh()" ui-sref="myClass" menu-close>
+    <a class="item item-icon-left" ui-sref="bookDeliveryService" menu-close>
+      <i class="icon ion-plus-circled"></i>
+      Book delivery service
+    </a>
+
+    <a class="item item-icon-left" ui-sref="trackMyRequest" menu-close>
       <i class="icon ion-android-clipboard"></i>
-      Lớp của tôi
+      Track my requests
     </a>
 
-    <a class="item item-icon-left" data-ng-click="eDatabase.loadTeacher()" ui-sref="teacher" menu-close>
-      <i class="icon ion-android-contacts"></i>
-      Đội ngũ cán bộ
+    <a class="item item-icon-left" onclick="" menu-close>
+      <i class="icon ion-android-search"></i>
+      Look for request
     </a>
 
-    <a class="item item-icon-left" data-ng-click="eDatabase.loadSchool()" ui-sref="school" menu-close>
-      <i class="icon ion-briefcase"></i>
-      Thông tin nhà trường
-    </a>
-
-    <a class="item item-icon-left" data-ng-click="eDatabase.loadProfile()" ui-sref="myProfile" menu-close>
+    <a class="item item-icon-left" ui-sref="myProfile" menu-close>
       <i class="icon ion-android-contact"></i>
-      Thông tin cá nhân
+      My Profile
+    </a>
+
+    <a class="item item-icon-left" ui-sref="myProfile" menu-close>
+      <i class="icon ion-help-buoy"></i>
+      Report problems
     </a>
 
     <a class="item item-icon-left" ui-sref="introduction" menu-close>
       <i class="icon ion-ios-information"></i>
-      Giới thiệu
+      About Us
     </a>
 
-    <a class="item item-icon-left" data-ng-click="eDatabase.signOut()" menu-close>
+    <a class="item item-icon-left" onclick="signOut()" menu-close>
       <i class="icon ion-android-exit"></i>
-      Đăng xuất
+      Sign Out
     </a>
   </div>
 </ion-content>

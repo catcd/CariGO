@@ -7,7 +7,8 @@
 
 var home = angular.module('myApp', ['ionic', 'toastr', 'forms', 'shareds']);
 
-home.config(function($stateProvider, $urlRouterProvider) {
+home.config(function($stateProvider, $urlRouterProvider, $httpProvider) {
+	$httpProvider.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded; charset=UTF-8';
 	$urlRouterProvider.otherwise('/sign-in');
 	$stateProvider
 

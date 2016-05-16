@@ -1,13 +1,13 @@
 /**
  * starter: Can Duy Cat
  * owner: Can Duy Cat
- * last update: 17-Sep-2015
+ * last update: 16/05/2016
  * type: app functions
  */
 
 var application = angular.module('shareds.application', [])
 
-application.run(function($rootScope, $window, $ionicLoading, eUser) {
+application.run(function($rootScope, $window, $ionicLoading, eUser, $state) {
 	// check if object is null/undefined/"" or not
 	isNull = function(obj) {
 		if (obj === null || obj === undefined || obj === '') {
@@ -15,6 +15,10 @@ application.run(function($rootScope, $window, $ionicLoading, eUser) {
 		}
 		return false;
 	};
+
+	signOut = function() {
+		$state.go('signIn');
+	}
 
 	loading = function() {
 		$ionicLoading.show({
