@@ -1,15 +1,13 @@
 /**
  * starter: Can Duy Cat
  * owner: Can Duy Cat
- * last update: 19-Sep-2015
+ * last update: 16/05/2016
  * type: side menu controller
  */
 
-var sideMenu = angular.module('controllers.sideMenu', []);
+var sideMenu = angular.module('forms.sideMenu', []);
 
-sideMenu.controller('SideMenuController', function($scope, $rootScope, $ionicHistory, $ionicSideMenuDelegate, eDatabase) {
-	$scope.eDatabase = eDatabase;
-
+sideMenu.controller('SideMenuController', function($scope, $rootScope, $ionicHistory, $ionicSideMenuDelegate) {
 	var shouldEnabled;
 
 	$scope.shouldSideMenuBeEnabled = function() {
