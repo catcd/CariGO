@@ -1,0 +1,10 @@
+/* starter: Can Duy Cat
+   owner: Can Duy Cat
+   last update: 03-Sep-2015
+   type: state template */
+
+.mp-info-card { margin: 10px; }
+.mp-card-divider { border-bottom: 0 !important; height: 25px; min-height: 25px; padding: 0; background: white;}
+.mp-card-divider h2 { left: 5px; position: inherit; top: 5px; color: #444; }
+.mp-card-first-item { border-top: 0 !important; }
+.mp-right {float: right;}

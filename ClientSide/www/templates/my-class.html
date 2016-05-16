@@ -1,0 +1,29 @@
+<!-- starter: Can Duy Cat
+   owner: Can Duy Cat
+   last update: 18-Sep-2015
+   type: state template -->
+
+<ion-view title="Lớp của tôi">
+  <ion-nav-buttons side="left">
+    <button class="button button-icon button-clear ion-android-menu app-button" ng-click="toggleLeft()"></button>
+  </ion-nav-buttons>
+  
+  <div class="bar bar-header item-input-inset search-box">
+    <ion-search placeholder="Tìm kiếm" filter="filter"></ion-search>
+  </div>
+
+  <ion-content padding="true" class="app-content-searchbox">
+    <div class="list">
+      <!-- Chu nhiem -->
+      <a class="item" data-ng-repeat="class in eSchool.klasses | filter: {code: filter.value, teacher_id: eUser.id }" data-ng-click="eDatabase.loadClass(class.id)" ui-sref="classDetail({classID: class.id})">
+        Lớp {{class.code}} - Chủ nhiệm
+        <!-- <span class="item-note">Sĩ số: {{}}</span> -->
+      </a>
+
+      <a class="item" data-ng-repeat="activity in eUser.teachingActivities | orderBy: code" data-ng-click="toClassDetail(activity.subject_id, activity.klass_id)" ui-sref="classDetail({classID: activity.klass_id})">
+        Lớp {{eSchool.getClass(activity.klass_id).code}} - {{eSchool.getSubject(activity.subject_id).name}}
+        <!-- <span class="item-note">Sĩ số: {{}}</span> -->
+      </a>
+    </div>
+  </ion-content>
+</ion-view>

@@ -1,0 +1,88 @@
+<!-- starter: Can Duy Cat
+   owner: Can Duy Cat
+   last update: 04-Sep-2015
+   type: state template -->
+
+<ion-view title="Thông tin nhà trường">
+  <ion-nav-buttons side="left">
+    <button class="button button-icon button-clear ion-android-menu style-button app-button" ng-click="toggleLeft()"></button>
+  </ion-nav-buttons>
+
+  <ion-content>
+    <div class="list card mp-info-card">
+      <div class="item item-divider mp-card-divider">
+        <h2>
+          <b>Thông tin cơ bản</b>
+        </h2>
+      </div>
+
+      <div class="item mp-card-first-item">
+        Mã trường:<span class="mp-right">{{eSchool.school.code}}</span>
+      </div>
+
+      <div class="item">
+        Tên trường:<span class="mp-right">{{eSchool.school.name}}</span>
+      </div>
+
+      <div class="item">
+        Loại trường:<span class="mp-right">{{eSchool.school.level}}</span>
+      </div>
+
+      <div class="item">
+        Loại hình:<span class="mp-right">{{eSchool.school.school_type}}</span>
+      </div>
+
+      <div class="item">
+        Dự án:<span class="mp-right">{{eSchool.school.project}}</span>
+      </div>
+
+      <div class="item">
+        Dạy học:<span class="mp-right">{{eSchool.school.teaching}}</span>
+      </div>
+
+      <div class="item">
+        Hiệu trưởng:<span class="mp-right">{{eSchool.school.principal}}</span>
+      </div>
+    </div>
+
+    <div class="list card mp-info-card">
+      <div class="item item-divider mp-card-divider">
+        <h2>
+          <b>Thông tin liên hệ</b>
+        </h2>
+      </div>
+
+<!--       <div class="item mp-card-first-item">
+        Tỉnh/Thành:<span class="mp-right">{{eSchool.school.code}}</span>
+      </div>
+
+      <div class="item">
+        Quận/Huyện:<span class="mp-right">{{eSchool.school.code}}</span>
+      </div>
+
+      <div class="item">
+        Phường/Xã:<span class="mp-right">{{eSchool.school.code}}</span>
+      </div>
+ -->
+      <div class="item mp-card-first-item">
+        Địa chỉ:<span class="mp-right">{{eSchool.school.address}}</span>
+      </div>
+
+      <div class="item">
+        Điện thoại:<span class="mp-right">{{eSchool.school.phone}}</span>
+      </div>
+
+      <div class="item">
+        Fax:<span class="mp-right">{{eSchool.school.fax}}</span>
+      </div>
+
+      <div class="item">
+        Email:<span class="mp-right">{{eSchool.school.email}}</span>
+      </div>
+
+      <div class="item">
+        Website:<span class="mp-right">{{eSchool.school.website}}</span>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

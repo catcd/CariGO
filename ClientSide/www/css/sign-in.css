@@ -1,0 +1,13 @@
+/**
+* starter: Can Duy Cat
+* owner: Can Duy Cat
+* last update: 02-Sep-2015
+* type: sign in state css
+*/
+#si-name { margin: 30px auto 0; display: block; }
+#si-name h2 {text-align: center; font-size: 35px;}
+#si-form { width:85%; max-width: 300px; margin: 35px auto; }
+#si-form div { width: 100%; margin: 0; }
+.si-input { font-size: 18px !important; width: 100%; color: #646464 !important; }
+#si-form input { color: #646464 !important; }
+.si-link { font-size: 18px; display: block; text-align: center; color: #646464 !important; text-decoration: none; }

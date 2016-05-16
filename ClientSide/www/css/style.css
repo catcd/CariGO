@@ -1,0 +1,77 @@
+/**
+* starter: Can Duy Cat
+* owner: Nguyen Minh Trang
+* last update: 17-Sep-2015
+* type: layer 0 css
+*/
+
+.a { border: 1px solid black !important; }
+
+/* easi animate */
+.easi-toggle-normal, .easi-fade-normal { overflow: hidden; transition: .5s linear all; }
+.easi-toggle-fast, .easi-fade-fast { overflow: hidden; transition: .2s linear all; }
+.easi-toggle-slow, .easi-fade-slow { overflow: hidden; transition: 1.0s linear all; }
+.easi-toggle-fast.ng-hide, .easi-toggle-normal.ng-hide, .easi-toggle-slow.ng-hide { height: 0; }
+.easi-fade-fast.ng-hide, .easi-fade-normal.ng-hide, .easi-fade-slow.ng-hide { opacity: 0; }
+
+/* toastr */
+/* success */
+.easi-toast-success { bottom: 50px; right: 0; width: 100%; }
+#toast-container.easi-toast-success > div { background-color: #5C8B9D; box-shadow: 0 0 0; margin: auto; max-width: 400px; min-width: 200px; width: 50%; }
+/* info */
+.easi-toast-info { bottom: 50px; right: 0; width: 100%; }
+#toast-container.easi-toast-info > div { background-color: #8EB4C1; box-shadow: 0 0 0; margin: auto; max-width: 400px; min-width: 200px; width: 50%; }
+/* error */
+.easi-toast-error { bottom: 50px; right: 0; width: 100%; }
+#toast-container.easi-toast-error > div { background-color: #D65930; box-shadow: 0 0 0; margin: auto; max-width: 400px; min-width: 200px; width: 50%; }
+/* warning */
+.easi-toast-warning { bottom: 50px; right: 0; width: 100%; }
+#toast-container.easi-toast-warning > div { background-color: #63666F; box-shadow: 0 0 0; margin: auto; max-width: 400px; min-width: 200px; width: 50%; }
+
+.loading-spinner svg { width: 50px; height: 50px; stroke: #444; }
+
+/****
+MENU BAR
+****/
+
+.app-button:before { color: #444; }
+.bar { border: 0; }
+
+
+/****
+SEARCH-BOX
+****/
+.search-box {
+	position: fixed;
+	z-index: 1;
+	top: 44px;
+}
+
+.app-content-searchbox { margin-top: 33px; }
+
+
+/****
+NAME: TruongNha
+****/
+
+.app-name, .app-name-intro {
+	margin-top: 30px;
+	margin-bottom: 30px;
+}
+.app-name, .app-name-intro {
+	margin-top: 0px;
+}
+
+.app-name h2, .app-name-intro h2 {
+	text-align: center;
+	font-size: 35px;
+}
+
+.app-name h2 span:nth-child(1), .app-name-intro h2 span:nth-child(1) {
+	color: royalblue;
+}
+
+.app-name h2 span:nth-child(2), .app-name-intro h2 span:nth-child(2) {
+	color: orangered;
+}
+

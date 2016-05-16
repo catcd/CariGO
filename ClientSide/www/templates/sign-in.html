@@ -1,0 +1,31 @@
+<!-- starter: Can Duy Cat
+   owner: Can Duy Cat
+   last update: 17-Sep-2015
+   type: sign in template -->
+
+<ion-view title="Sign In">
+  <ion-content padding="true">
+    <div class="app-name">
+      <h2>CariGO</h2>
+    </div>
+
+    <form id="si-form" method="POST" name="signInForm" data-ng-submit="signIn()">
+      <div class="list list-inset">
+        <label class="item item-input">
+          <i class="icon ion-android-person placeholder-icon"></i>
+          <input class="si-input" data-ng-model="user.username" type="text" placeholder="Username" required>
+        </label>
+
+        <label class="item item-input">
+          <i class="icon ion-locked placeholder-icon"></i>
+          <input class="si-input" data-ng-model="user.password" type="password" placeholder="Password" required>
+        </label>
+      </div>
+
+      <input class="button button-block" type="submit" value="Sign In">
+    </form>
+
+    <!-- links -->
+    <a class="si-link" ui-sref="introduction">About Us</a>
+  </ion-content>
+</ion-view>

@@ -1,0 +1,13 @@
+/**
+* starter: Can Duy Cat
+* owner: Can Duy Cat
+* last update: 18-Sep-2015
+* type: css
+*/
+
+#intro { font-size: 1.2em; }
+#intro p { margin-bottom: 1.2em; line-height: 1.3em; text-align: justify;}
+#intro .contact { margin-bottom: 20px; }
+#intro .contact p {	margin: 10px 0 0 10px; }
+#intro .contact p i { font-size: 1.4em; margin-right: 10px; }
+#intro a, #intro a:visited { text-decoration: none; color: blue; }

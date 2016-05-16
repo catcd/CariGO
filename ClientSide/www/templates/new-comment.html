@@ -1,0 +1,38 @@
+<!-- starter: Can Duy Cat
+   owner: Nguyen Minh Trang
+   last update: 18-Sep-2015
+   type: state template -->
+
+<ion-view title="Thêm nhận xét">
+  <ion-nav-buttons side="left">
+    <button class="button button-icon button-clear ion-android-arrow-back style-button app-button" data-ng-click="goBack()"></button>
+  </ion-nav-buttons>
+
+  <ion-content padding="true">
+    <div class="button-bar nc-buttons">
+      <button class="button button-stable button-block" data-ng-click="eToast.toastInfo('Chức năng chưa được hỗ trợ!', 2000);">Nhận xét trước</button>
+      <button class="button button-stable button-block" data-ng-click="eToast.toastInfo('Chức năng chưa được hỗ trợ!', 2000);">Mẫu</button>
+    </div>
+    
+    <div id="nc-student">
+      <label>Học sinh: </label>
+      <h4>{{studentName}}</h4>
+    </div>
+    
+    <form class="nc-form" data-ng-submit="addComment()">
+      <label class="item item-input">
+        <i class="icon ion-ios-book placeholder-icon"></i>
+        <textarea rows="3" placeholder="Kiến thức" data-ng-model="comment.skill"></textarea>
+      </label>
+      <label class="item item-input">
+        <i class="icon ion-flash placeholder-icon"></i>
+        <textarea rows="3" placeholder="Năng lực" data-ng-model="comment.ability"></textarea>
+      </label>
+      <label class="item item-input">
+        <i class="icon ion-bowtie placeholder-icon"></i>
+        <textarea rows="3" placeholder="Phẩm chất" data-ng-model="comment.quality"></textarea>
+      </label>
+      <button type="submit" class="button button-stable button-block ">Lưu</button>
+    </form>
+  </ion-content>
+</ion-view>

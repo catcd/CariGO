@@ -1,0 +1,48 @@
+/**
+* starter: Can Duy Cat
+* owner: Nguyen Minh Trang
+* last update: 08-Sep-2015
+* type: new comment css
+*/
+
+.nc-buttons button{
+    margin: 0 !important;
+}
+
+
+
+/****
+STUDENT NAME
+****/
+
+#nc-student {
+    margin-top: 20px;
+}
+
+#nc-student label {
+    float: left;
+}
+
+#nc-student h4 {
+    display: inline-block;
+    margin: 0 10px;
+}
+
+
+
+/****
+NEW-COMMENT: INPUT FORM
+****/
+
+.nc-form {
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.nc-form i {
+    margin-right: 10px;
+}
+
+.nc-form textarea {
+    font-size: 16px;
+}

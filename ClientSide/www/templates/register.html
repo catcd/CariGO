@@ -1,0 +1,53 @@
+<!-- starter: Can Duy Cat
+   owner: Can Duy Cat
+   last update: 02-Sep-2015
+   type: register template -->
+
+<ion-content class="easi-full-blue">
+  <div id="name">
+    <h2><span style="color:royalblue;">Trường</span> <span style="color:orangered;">Nhà</span></h2>
+  </div>
+
+  <form class="rg-form easi-dark-blue" method="POST" name="registerForm" data-ng-submit="register()">
+    <div class="si-div">
+      <label class="item item-input">
+        <i class="icon ion-android-person placeholder-icon"></i>
+        <input class="easi-dark-blue si-input" data-ng-model="user.id" type="text" name="userid" placeholder="Tên người dùng" autofocus>
+      </label>
+    </div>
+
+    <div class="si-div">
+      <label class="item item-input">
+        <i class="icon ion-android-create placeholder-icon"></i>
+        <input class="easi-dark-blue si-input" data-ng-model="user.name" type="text" name="username" placeholder="Họ và tên">
+      </label>
+    </div>
+
+    <div class="si-div">
+      <label class="item item-input">
+        <i class="icon ion-at placeholder-icon"></i>
+        <input class="easi-dark-blue si-input" data-ng-model="user.email" type="text" name="useremail" placeholder="Email">
+      </label>
+    </div>
+
+    <div class="si-div">
+      <label class="item item-input">
+        <i class="icon ion-locked placeholder-icon"></i>
+        <input class="easi-dark-blue si-input" data-ng-model="user.password" type="password" name="password" placeholder="Mật khẩu">
+      </label>
+    </div>
+
+    <div class="si-div">
+      <label class="item item-input">
+        <i class="icon ion-unlocked placeholder-icon"></i>
+        <input class="easi-dark-blue si-input" data-ng-model="user.re_password" type="password" name="repassword" placeholder="Xác nhận">
+      </label>
+    </div>
+
+    <!-- term and button -->
+    <p class="rg-terms">Vui lòng đọc kỹ <a class="easi-dark-blue" href="#">chính sách người dùng</a> trước khi nhấn đăng ký.</p>
+
+    <button class="button icon ion-chevron-left button-easi-blue rg-btn" type="button"></button>
+    <input class="button button-easi-blue rg-submit" type="submit" value="Đăng ký">
+  </form>
+</ion-content>
