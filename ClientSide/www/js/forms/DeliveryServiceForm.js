@@ -23,9 +23,18 @@ deliveryService.controller('DeliveryServiceForm', function($scope, $rootScope, $
 		dSpecialRequirement: ''
 	};
 
+	$scope.request = {
+		rTypeOfCargo: '',
+		rFromLocation: '',
+		rToLocation: '',
+		rDeliveryDate: '',
+		rDeliveryTime: '',
+		rSpecialRequirement: ''
+	}
+
 	$scope.requests = [];
 
-	$scope.getRequests = function() {
+	var getRequests = function() {
 		loading();
 		// connect throught http connection
 		$http({
@@ -39,6 +48,7 @@ deliveryService.controller('DeliveryServiceForm', function($scope, $rootScope, $
 			if(data == 'FAILED'){
 				stopLoading();
 				eToast.toastError('Cannot get requests!', 2000);
+				$state.go('trackMyRequest');
 			}
 			else{
 				stopLoading();
@@ -50,11 +60,11 @@ deliveryService.controller('DeliveryServiceForm', function($scope, $rootScope, $
 		});
 	}
 
-	$scope.deleteRequest = function(requestID) {
+	var deleteRequest = function() {
 		loading();
 		// connect throught http connection
 		$http({
-			url: 'http://localhost:80/get-request/' . requestID,
+			url: 'http://localhost:80/delete-request/' . $scope.requestID,
 			method: 'POST',
 			data: {
 				'username': eUser.username,
@@ -76,7 +86,7 @@ deliveryService.controller('DeliveryServiceForm', function($scope, $rootScope, $
 		});
 	}
 
-	$scope.bookService = function(){
+	var bookDeliveryService = function(){
 		loading();
 		// connect throught http connection
 		$http({
@@ -85,7 +95,6 @@ deliveryService.controller('DeliveryServiceForm', function($scope, $rootScope, $
 			data: {
 				'username': eUser.username,
 				'password': eUser.password,
-				'request-id': $scope.requestID,
 				'request': {
 					'from_address' : $scope.deliveryService.dFromLocation,
 					'to_address' : $scope.deliveryService.dToLocation,
@@ -97,7 +106,7 @@ deliveryService.controller('DeliveryServiceForm', function($scope, $rootScope, $
 			if (data == 'SUCCESS') {
 				stopLoading();
 				eToast.toastInfo('Book Successfully', 2000);
-				$state.go('bookDeliveryService');
+				//$state.go('bookDeliveryService');
 			} else {
 				stopLoading();
 				eToast.toastError('Cannot book delivery service', 2000);
@@ -108,7 +117,7 @@ deliveryService.controller('DeliveryServiceForm', function($scope, $rootScope, $
 		});
 	}
 
-	$scope.changeRequestDetail = function(){
+	var changeRequestDetail = function(){
 		loading();
 		// connect throught http connection
 		$http({
@@ -138,5 +147,40 @@ deliveryService.controller('DeliveryServiceForm', function($scope, $rootScope, $
 			stopLoading();
 			eToast.toastError('There is an error. Please! Try again later.', 2000);
 		});
+	}
+
+	var verifyBookInfo = function(){
+		if($scope.deliveryService.uName.length == 0){
+			eToast.toastInfo('Name is required',1000);
+		} else if($scope.deliveryService.uPhone.length == 0){
+			eToast.toastInfo('Phone is required',1000);
+		} else if($scope.deliveryService.dFromLocation.length == 0){
+			eToast.toastInfo('From address is required',1000);
+		} else if($scope.deliveryService.dToLocation.length == 0){
+			eToast.toastInfo('To address is required',1000);
+		} else { return 'VALID'; }
+	}
+
+	$scope.confirmBook = function(){
+		var isvalid = verifyBookInfo();
+		if(isvalid == 'VALID'){
+			//bookDeliveryService();
+			eToast.toastInfo('Hello',1000);
+		}
+	}
+
+	$scope.saveChange = function(){
+		var isvalid = verifyBookInfo();
+		if(isvalid == 'VALID'){
+			//changeRequestDetail();
+			eToast.toastInfo('Hello',1000);
+		}
+	}
+
+	$scope.deleteRequest = function(){
+		if($scope.requestID != null){
+			deleteRequest();
+			eToast.toastInfo('Hello',1000);
+		}
 	}
 });
