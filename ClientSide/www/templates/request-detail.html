@@ -9,30 +9,30 @@
 	</ion-nav-buttons>
 
 	<ion-content padding="true">
-		<div id="request-detail-main">
+		<div id="request-detail-main" class="form">
 			<form action="#" method="POST">
-			<h1>Request Details</h1>
-			<fieldset>
-				<label for="cargo_type">Type Of Cargo:</label>
-				<select id="cargo_type" name="cargo_type" ng-model="">
-					<option value="food">Food</option>
-					<option value="furniture">Furniture</option>
-					<option value="equipment">Equipment</option>
-					<option value="other">Other</option>
-				</select>
-				<label for="from_loc">From Location:</label>
-				<input type="text" id="from_loc" name="from_loc" ng-model="" required></input>
-				<label for="to_loc">To Location:</label>
-				<input type="text" id="to_loc" name="to_loc" ng-model="" required></input>
-				<label for="date">Delivery Time:</label>
-				<input type="date" id="date" name="date" ng-model="" required></input>
-				<input type="time" id="time" name="time" ng-model="" required></input>
-				</select>
-				<label for="special">Special Requirements:</label>
-				<textarea id="special" name="special" ng-model=""></textarea>
-			</fieldset>
-			<button ng-click="">Delete</button>
-			<button type="submit" ng-click="">Save</button>
+				<fieldset>
+					<label for="cargo_type">Type Of Cargo:</label>
+					<select id="cargo_type" name="cargo_type" ng-model="">
+						<option value="food" selected>Food</option>
+						<option value="furniture">Furniture</option>
+						<option value="equipment">Equipment</option>
+						<option value="other">Other</option>
+					</select>
+					<label for="from_loc">From Location:</label>
+					<input type="text" id="from_loc" name="from_loc" ng-model="" required></input>
+					<label for="to_loc">To Location:</label>
+					<input type="text" id="to_loc" name="to_loc" ng-model="" required></input>
+					<label for="date">Delivery Time:</label>
+					<input type="date" id="date" name="date" ng-model="" required></input>
+					<input type="time" id="time" name="time" ng-model="" required></input>
+					</select>
+					<label for="special">Special Requirements:</label>
+					<textarea id="special" name="special" ng-model=""></textarea>
+				</fieldset>
+				<button ng-click="">Delete</button>
+				<button type="submit" ng-click="">Save</button>
+			</form>
 		</div>
 	</ion-content>
 </ion-view>

@@ -80,22 +80,11 @@ MENU BAR
 .bar { border: 0; }
 
 
-/****
-SEARCH-BOX
-****/
-/*.search-box {
-	position: fixed;
-	z-index: 1;
-	top: 44px;
-}
-
-.app-content-searchbox { margin-top: 33px; }*/
-
 
 /*************
 NAME: CariGO
 *************/
-/**, *:before, *:after {
+*, *:before, *:after {
 	-moz-box-sizing: border-box;
 	-webkit-box-sizing: border-box;
 	box-sizing: border-box;
@@ -107,15 +96,7 @@ body {
 }
 
 ion-content {
-	background: #f4f7f8;
-}
-
-form,
-#request-list,
-#request-detail-main {
-	width: inherit;
-	margin: 0 auto;
-	background: #f4f7f8;
+	background: #fff;
 }
 
 h1 {
@@ -123,13 +104,30 @@ h1 {
 	text-align: center;
 }
 
-input[type="text"],
-input[type="date"],
-input[type="number"],
-input[type="tel"],
-input[type="time"],
-textarea,
-select {
+h3,
+h6 {
+	margin: 0;
+	padding: 0;
+}
+
+
+
+/**********
+FORM ELEMENTS
+***********/
+
+.form {
+	width: 100%;
+	margin: 0 auto;
+}
+
+.form input[type="text"],
+.form input[type="date"],
+.form input[type="number"],
+.form input[type="tel"],
+.form input[type="time"],
+.form textarea,
+.form select {
 	background: rgba(255,255,255,0.1);
 	border: none;
 	font-size: 16px;
@@ -144,22 +142,23 @@ select {
 	margin-bottom: 20px;
 }
 
-input[type="date"] {
+.form input[type="date"] {
 	width: 60%;
 	display: inline-block;
 }
-input[type="time"] {
+
+.form input[type="time"] {
 	width: 38%;
 	display: inline-block;
 }
 
-select {
+.form select {
 	padding: 6px;
 	height: 40px;
 	border-radius: 2px;
 }
 
-button {
+.form button {
 	padding: 19px 0 19px 0;
 	color: #FFF;
 	background-color: #ff6600;
@@ -172,33 +171,33 @@ button {
 	margin-bottom: 20px;
 }
 
-button[type="submit"] {
-	background-color: #3366cc;
+.form button[type="submit"] {
+	background-color: #5C8B9D;
 }
 
-fieldset {
+.form fieldset {
 	margin-bottom: 10px;
 	border: none;
 }
 
-legend {
+.form legend {
 	font-size: 1.4em;
 	margin-bottom: 10px;
 	border: 0;
 }
 
-label {
+.form label {
 	display: block;
 	margin-bottom: 8px;
 }
 
-label.light {
+.form label.light {
 	font-weight: 300;
 	display: inline;
 }
 
-.number {
-	background-color: #3366cc;
+.form .number {
+	background-color: #5C8B9D;
 	color: #fff;
 	height: 30px;
 	width: 30px;
@@ -210,4 +209,3 @@ label.light {
 	text-shadow: 0 1px 0 rgba(255,255,255,0.2);
 	border-radius: 100%;
 }
-*/

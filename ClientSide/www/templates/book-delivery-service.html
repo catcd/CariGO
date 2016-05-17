@@ -9,7 +9,7 @@
 	</ion-nav-buttons>
 
 	<ion-content padding="true">
-		<form action="#" method="POST">
+		<form action="#" method="POST" class="form">
 			<fieldset>
 				<legend><span class="number">1</span>Contact Information</legend>
 				<label for="name">Name:</label>
@@ -28,7 +28,7 @@
 				<input type="time" id="time" name="time" ng-model="deliveryService.dTime" required></input>
 				<label for="cargo_type">Type Of Cargo:</label>
 				<select id="cargo_type" name="cargo_type" ng-model="deliveryService.dTypeOfCargo">
-					<option value="food">Food</option>
+					<option value="food" selected>Food</option>
 					<option value="furniture">Furniture</option>
 					<option value="equipment">Equipment</option>
 					<option value="other">Other</option>
