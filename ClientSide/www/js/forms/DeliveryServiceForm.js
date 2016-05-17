@@ -9,7 +9,7 @@ var deliveryService = angular.module('forms.deliveryService', []);
 
 deliveryService.controller('DeliveryServiceForm', function($scope, $rootScope, $stateParams, $http, $state, eToast, eUser) {
 	if ($stateParams.requestID != null) {
-		$scope.requestID = $stateParams.requestID;	
+		$scope.requestID = $stateParams.requestID;
 	}
 	
 	$scope.deliveryService = {
@@ -30,9 +30,25 @@ deliveryService.controller('DeliveryServiceForm', function($scope, $rootScope, $
 		rDeliveryDate: '',
 		rDeliveryTime: '',
 		rSpecialRequirement: ''
-	}
+	};
 
-	$scope.requests = [];
+	$scope.requestList = [
+		{
+			dStatus: 'unserved',
+			dTypeOfCargo: 'Food',
+			dFromLocation: '13 Hai Ba Trung, Ha Noi',
+			dToLocation: '29 Cau Giay, Ha Noi',
+			dDeliveryManNum: '1',
+			dMinMoney: '0' + ' VND'
+		}, {
+			dStatus: 'served',
+			dTypeOfCargo: 'Food',
+			dFromLocation: '139 Quan Nhan, Ha Noi',
+			dToLocation: '144 Xuan Thuy, Ha Noi',
+			dDeliveryManNum: '5',
+			dMinMoney: '500.000' + ' VND'
+		}
+	];
 
 	var getRequests = function() {
 		loading();
@@ -52,6 +68,7 @@ deliveryService.controller('DeliveryServiceForm', function($scope, $rootScope, $
 			}
 			else{
 				stopLoading();
+				console.log(data);
 				$scope.requests = data;
 			}
 		}).error(function(data, status, headers, config) {
@@ -75,7 +92,7 @@ deliveryService.controller('DeliveryServiceForm', function($scope, $rootScope, $
 			if (data == 'SUCCESS') {
 				stopLoading();
 				eToast.toastInfo('Delete Successfully', 2000);
-				$state.go('trackMyRequest');
+				//$state.go('trackMyRequest');
 			} else {
 				stopLoading();
 				eToast.toastError('Cannot delete!', 2000);
@@ -138,7 +155,6 @@ deliveryService.controller('DeliveryServiceForm', function($scope, $rootScope, $
 			if (data == 'SUCCESS') {
 				stopLoading();
 				eToast.toastInfo('Update request Successfully',2000);
-				$state.go('requestDetail');
 			} else {
 				stopLoading();
 				eToast.toastError('Cannot update the request', 2000);
@@ -158,6 +174,8 @@ deliveryService.controller('DeliveryServiceForm', function($scope, $rootScope, $
 			eToast.toastInfo('From address is required',1000);
 		} else if($scope.deliveryService.dToLocation.length == 0){
 			eToast.toastInfo('To address is required',1000);
+		}  else if($scope.deliveryService.dTypeOfCargo == null){
+			eToast.toastInfo('Type of Cargo is required',1000);
 		} else { return 'VALID'; }
 	}
 
@@ -166,6 +184,8 @@ deliveryService.controller('DeliveryServiceForm', function($scope, $rootScope, $
 			eToast.toastInfo('From address is required',1000);
 		} else if($scope.request.rToLocation.length == 0){
 			eToast.toastInfo('To address is required',1000);
+		} else if($scope.request.rTypeOfCargo == null){
+			eToast.toastInfo('Type of Cargo is required',1000);
 		} else { return 'VALID'; }
 	}
 
@@ -191,4 +211,14 @@ deliveryService.controller('DeliveryServiceForm', function($scope, $rootScope, $
 			eToast.toastInfo('Hello',1000);
 		}
 	}
+
+	$scope.getRequests = function(){
+		getRequests();
+	}
+
+	$scope.viewRequestDetails = function(){
+		$state.go('requestDetail');
+	}
+
+	$scope.getRequests();
 });
