@@ -161,6 +161,14 @@ deliveryService.controller('DeliveryServiceForm', function($scope, $rootScope, $
 		} else { return 'VALID'; }
 	}
 
+	var verifyChangeInfo = function(){
+		if($scope.request.rFromLocation.length == 0){
+			eToast.toastInfo('From address is required',1000);
+		} else if($scope.request.rToLocation.length == 0){
+			eToast.toastInfo('To address is required',1000);
+		} else { return 'VALID'; }
+	}
+
 	$scope.confirmBook = function(){
 		var isvalid = verifyBookInfo();
 		if(isvalid == 'VALID'){
@@ -170,7 +178,7 @@ deliveryService.controller('DeliveryServiceForm', function($scope, $rootScope, $
 	}
 
 	$scope.saveChange = function(){
-		var isvalid = verifyBookInfo();
+		var isvalid = verifyChangeInfo();
 		if(isvalid == 'VALID'){
 			//changeRequestDetail();
 			eToast.toastInfo('Hello',1000);
